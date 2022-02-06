@@ -16,12 +16,24 @@ Let’s explore these types of functional tests with examples:
 - [Alpha testing](#alpha-testing)
 - [Beta testing](#beta-testing)
 - [Production testing](#production-testing)
+- [Stress testing](#stress-testing)
+- [Performance testing](#performance-testing)
+- [Object-Oriented testing](#object-oriented-testing)
 
 ## Unit testing
 ---
 Before you can test an entire software program, make sure the individual parts work properly on their own. Unit testing validates the function of a unit, ensuring that the inputs (one to a few) result in the lone desired output. This testing type provides the foundation for more complex integrated software. When done right, unit testing drives higher quality application code and speeds up the development process. Developers often execute unit tests through test automation.
+
+It focuses on the smallest unit of software design. In this, we test an individual unit or group of interrelated units. It is often done by the programmer by using sample input and observing its corresponding outputs.
+
 #### Example:
 A developer builds a calculator app. A unit test would check whether the user can input two numbers and receive an accurate sum. Separate unit tests would validate other calculator functionality, such as subtraction, multiplication and division.
+```
+a) In a program we are checking if loop, method or 
+   function is working fine
+b) Misunderstood or incorrect, arithmetic precedence.
+c) Incorrect initialization
+```
 
 ## Component testing / Module testing
 ---
@@ -31,9 +43,16 @@ A banking mobile app includes an option to schedule an appointment with a bankin
 
 ## Smoke testing
 ---
-Smoke testing, a type of acceptance testing, provides an initial check that a new software build and its critical functionality are stable. If the smoke tests pass, the build can undergo further testing. Smoke testing, also called build verification testing, often checks whether new or critical functionality meets its objective. If the tests don’t pass, as the saying goes, “where there’s smoke, there’s fire,” and additional dev work is required.
+Smoke testing, a type of acceptance testing, provides an initial check that a new software build and its critical functionality are stable. If the smoke tests pass, the build can undergo further testing. Smoke testing, also called build verification testing, often checks whether new or critical functionality meets its objective. If the tests don’t pass, as the saying goes, "where there's smoke, there's fire," and additional dev work is required.
+
+This test is done to make sure that software under testing is ready or stable for further testing 
+It is called a smoke test as the testing an initial pass is done to check if it did not catch the fire or smoke in the initial switch on. 
 #### Example:
 A web app for an insurance company adds a claims status page. Testers would apply smoke tests to verify that the existing build works on a fundamental level, such as whether a user can successfully log in, navigate to the claims status page and retrieve the status of a specific claim without the app crashing or malfunctioning.
+```
+If project has 2 modules so before going to module 
+make sure that module 1 works properly
+```
 
 ## Sanity testing
 ---
@@ -44,14 +63,36 @@ A web page for a telehealth provider returns a 404 error for its mental health p
 ## Regression testing
 ---
 Just because functional tests pass once doesn’t mean they’ll always pass. When developers commit new code or change a feature, you run regression tests to make sure the software still functions as expected. Regression testing helps maintain a stable product while changes are made to it. Regression tests are often automated.
+
+Every time a new module is added leads to changes in the program. This type of testing makes sure that the whole component works properly even after adding components to the complete program.
+
 #### Example:
 A clothing retailer adds the ability to pay with customer rewards points on their mobile app. Testers might perform regression tests on other existing functionality, such as the ability to pay with credit cards and gift cards, to make sure all forms of payment work correctly.
+```
+In school record suppose we have module staff, students 
+and finance combining these modules and checking if on 
+integration these module works fine is regression testing
+```
 
 ## Integration testing
 ---
 Integration testing is often done in concert with unit testing. Through integration testing, QA professionals verify that individual modules of code work together properly as a group. Many modern applications run on microservices, self-contained applications that are designed to handle a specific task. These microservices must be able to communicate with each other, or the application won’t work as intended. Through integration testing, testers ensure these components operate and communicate together seamlessly.
+
+The objective is to take unit tested components and build a program structure that has been dictated by design. Integration testing is testing in which a group of components is combined to produce output. 
+
+Integration testing is of four types: (i) Top-down (ii) Bottom-up (iii) Sandwich (iv) Big-Bang
+
 #### Example:
 A credit card company includes a page where a customer can request a credit increase, which is a separate code base from login functionality. Testers might perform integration tests to make sure the system remembers the user after they navigate to the credit increase page, and again after a successful request.
+```
+(a) Black Box testing:- It is used for validation. 
+In this we ignore internal working mechanism and 
+focuse on what is the output?.
+
+(b) White Box testing:- It is used for verification. 
+In this we focus on internal mechanism i.e.
+how the output is achieved?
+```
 
 ## API testing
 ---
@@ -68,8 +109,15 @@ A wearables maker creates a mobile app for product setup and maintenance. As par
 ## System testing
 ---
 With system testing, QA professionals test the software in its entirety, as a complete product. With this type of functional testing, testers validate the complete and integrated software package to make sure it meets requirements. Where necessary, testers can provide feedback on the functionality and performance of the app or website without prior knowledge of how it was programmed. This helps teams develop test cases to be used moving forward. System testing is also referred to as end-to-end testing.
+
+This software is tested such that it works fine for the different operating systems. It is covered under the black box testing technique. In this, we just focus on the required input and output without focusing on internal working. 
+In this, we have security testing, recovery testing, stress testing, and performance testing 
+
 #### Example:
 An automobile manufacturer produces an in-car entertainment system that gives users functionality for voice control, GPS, a video player, Bluetooth connectivity, mobile phone pairing, touch-screen support and climate control. Testers would assess all of these features individually, but they must also test them as a complete system to ensure interoperability and a good user experience.
+```
+This include functional as well as non functional testing
+```
 
 ## White-box testing
 ---
@@ -92,17 +140,57 @@ A software company releases a product that enables its users to manage big data.
 ## Alpha testing
 ---
 Another subset of acceptance testing, alpha testing uses internal team members to evaluate the product. These team members should be knowledgeable of the project but not directly involved in its development or testing. Where some builds might still be somewhat unstable, alpha testing provides an immediate subset of testers to root out major bugs before the software is seen by external users.
+
+This is a type of validation testing. It is a type of acceptance testing which is done before the product is released to customers. It is typically done by QA people.
+
 #### Example:
 In this functional testing example, a casino games provider releases a new version of its app that includes video poker. The organization compiles a cross-functional group of internal users that test whether the app functions correctly on their devices and how the user experience can improve.
+```
+When software testing is performed internally within
+the organization
+```
 
 ## Beta testing
 ---
 After the internal team tests the product and fixes bugs, beta testing occurs with a select group of end users. Beta testing serves as a soft launch, enabling you to get feedback from real users who have no prior knowledge of the app. Beta testing enables you to gather feedback from unbiased users who may interact with the product differently than you intended, perhaps identifying critical unknown bugs before release to a wide user base.
+
+The beta test is conducted at one or more customer sites by the end-user of the software. This version is released for a limited number of users for testing in a real-time environment 
+
 #### Example:
 A restaurant chain releases a new mobile order and pickup system. Before the company releases the functionality to all of its mobile app users, it tests the app with a small number of dedicated customers and provides them with rewards for participating.
+```
+When software testing is performed for the limited number of people
+```
 
 ## Production testing
 ---
 Once the product goes public, it is in a live production environment where any user can interact with it in any way — you no longer can control everything from the testing environment to the number of people using the product. Production testing is part of continuous testing and shift-right testing, which attempts to discover and triage user-reported defects as quickly as possible. By testing in production, the organization can test beyond the scripted test cases in a varied environment. With production testing, the organization can confirm product functionality and stability.
 #### Example:
 A fitness equipment manufacturer can monitor user-reported defects and device metrics to make sure its internet-connected treadmills, elliptical and stair-climbing machines function as they should — upon delivery and continuously.
+
+## Stress testing
+---
+In this, we give unfavorable conditions to the system and check how they perform in those conditions.
+#### Example:
+- Test cases that require maximum memory or other resources are executed
+- Test cases that may cause thrashing in a virtual operating system
+- Test cases that may cause excessive disk requirement
+
+## Performance testing
+---
+It is designed to test the run-time performance of software within the context of an integrated system. It is used to test the speed and effectiveness of the program. It is also called load testing. In it we check, what is the performance of the system in the given load.
+#### Example: 
+```
+Checking number of processor cycles.
+```
+
+## Object-Oriented testing
+---
+This testing is a combination of various testing techniques that help to verify and validate object-oriented software. This testing is done in the following manner: 
+
+- Testing of Requirements,
+- Design and Analysis of Testing,
+- Testing of Code,
+- Integration testing,
+- System testing,
+- User Testing
